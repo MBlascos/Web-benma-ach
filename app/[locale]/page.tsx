@@ -7,20 +7,20 @@ import SponsorStrip from "@/components/home/SponsorStrip";
 import { RESULTS, CALENDAR_EVENTS, ACHIEVEMENTS, SPONSORS } from "@/lib/data";
 import Link from "next/link";
 
-export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = useTranslations("home");
 
-  const latestResult = RESULTS[0];
   const nextRace = CALENDAR_EVENTS.find((e) => e.status === "upcoming");
   const featuredAchievements = ACHIEVEMENTS.slice(0, 4);
 
   return (
     <>
-      <Hero locale="en" />
+      <Hero locale={locale} />
       <StatBar />
-      <AchievementsTeaser achievements={featuredAchievements} locale="en" />
+      <AchievementsTeaser achievements={featuredAchievements} locale={locale} />
       {nextRace && <NextRace event={nextRace} />}
-      <SponsorStrip sponsors={SPONSORS} />
+      <SponsorStrip sponsors={SPONSORS} locale={locale} />
     </>
   );
 }

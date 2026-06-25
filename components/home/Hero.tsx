@@ -8,7 +8,7 @@ export default function Hero({ locale }: { locale: string }) {
   const t = useTranslations("home");
 
   return (
-    <section className="relative min-h-screen flex items-end pb-16 overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-end pb-16 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -68,10 +68,10 @@ export default function Hero({ locale }: { locale: string }) {
         {/* Key stat */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-8">
           {[
-            { num: "1st", label: "WSK Super Master Series Final — Lonato 2026" },
-            { num: "1st", label: "IAME Winter Cup Champion — 2024" },
-            { num: "1st", label: "IAME Euro Series Round 1 — Chiva 2024" },
-            { num: "1st", label: "National Championship — Zuera 2022" },
+            { num: "P1", label: "WSK Super Master Series Final — Lonato 2026" },
+            { num: "P3", label: "WSK Super Master Series Overall — 2026" },
+            { num: "P12", label: "FIA Karting World Championship — Sweden 2025" },
+            { num: "15", label: "Years old — racing at the top of European karting" },
           ].map(({ num, label }) => (
             <div key={label} className="flex flex-col gap-0.5">
               <span className="font-display font-black text-3xl sm:text-4xl text-white leading-none">

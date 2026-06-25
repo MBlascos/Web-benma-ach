@@ -15,7 +15,7 @@ export default function AboutPage() {
   const t = useTranslations("about");
 
   return (
-    <div className="pt-24 pb-20 min-h-screen">
+    <div className="pt-24 pb-20 min-h-[100dvh]">
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[400px] mb-20">
         <Image
@@ -94,20 +94,18 @@ export default function AboutPage() {
               <h2 className="font-display font-bold uppercase text-white text-2xl tracking-wide mb-6">
                 {t("machinery_title")} — 2026 Season
               </h2>
-              <div className="bg-[#16181D] border border-white/5 rounded-lg p-6">
-                <div className="grid sm:grid-cols-3 gap-6">
-                  {[
-                    { label: "Chassis", value: "Parolin", note: "Italian-built, top OK specification" },
-                    { label: "Engine", value: "TM Kart", note: "Category-legal direct-drive unit" },
-                    { label: "Tyres", value: "LeCont", note: "Control tyre — equal across the field" },
-                  ].map(({ label, value, note }) => (
-                    <div key={label}>
-                      <p className="text-[#8A9099] text-xs tracking-widest uppercase mb-1">{label}</p>
-                      <p className="text-white font-display font-black text-xl">{value}</p>
-                      <p className="text-[#8A9099] text-xs mt-1">{note}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="divide-y divide-white/5">
+                {[
+                  { label: "Chassis", value: "Parolin", note: "Italian-built, top OK specification" },
+                  { label: "Engine", value: "TM Kart", note: "Category-legal direct-drive unit" },
+                  { label: "Tyres", value: "LeCont", note: "Control tyre — equal across the field" },
+                ].map(({ label, value, note }) => (
+                  <div key={label} className="flex items-baseline gap-6 py-4">
+                    <p className="text-[#8A9099] text-xs tracking-widest uppercase w-16 flex-shrink-0">{label}</p>
+                    <span className="text-white font-display font-black text-xl">{value}</span>
+                    <span className="text-[#8A9099] text-xs">{note}</span>
+                  </div>
+                ))}
               </div>
             </section>
           </div>

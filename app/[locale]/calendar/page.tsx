@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
 import { CALENDAR_EVENTS } from "@/lib/data";
 
-const FLAG_MAP: Record<string, string> = {
-  IT: "🇮🇹", ES: "🇪🇸", BE: "🇧🇪", SE: "🇸🇪", EU: "🇪🇺", GB: "🇬🇧", FR: "🇫🇷", PT: "🇵🇹", DK: "🇩🇰", DE: "🇩🇪",
+const COUNTRY_NAMES: Record<string, string> = {
+  IT: "Italy", ES: "Spain", BE: "Belgium", SE: "Sweden", EU: "Europe",
+  GB: "Great Britain", FR: "France", PT: "Portugal", DK: "Denmark", DE: "Germany",
 };
 
 const STATUS_STYLES = {
@@ -18,7 +19,7 @@ export default function CalendarPage() {
   const completed = CALENDAR_EVENTS.filter((e) => e.status === "completed");
 
   return (
-    <div className="pt-24 pb-20 min-h-screen">
+    <div className="pt-24 pb-20 min-h-[100dvh]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <p className="text-[#E10600] font-display font-bold text-xs tracking-[0.2em] uppercase mb-2">
@@ -48,7 +49,7 @@ export default function CalendarPage() {
                       </div>
                       <h3 className="text-white font-display font-bold text-xl">{e.title}</h3>
                       <p className="text-[#8A9099] text-sm mt-1">
-                        {FLAG_MAP[e.country] ?? "🏁"} {e.circuit}, {e.city}
+                        {e.circuit}, {e.city}{COUNTRY_NAMES[e.country] ? ` — ${COUNTRY_NAMES[e.country]}` : ""}
                       </p>
                     </div>
                     <div className="text-right">
@@ -82,7 +83,7 @@ export default function CalendarPage() {
                     </div>
                     <h3 className="text-white font-display font-bold text-xl">{e.title}</h3>
                     <p className="text-[#8A9099] text-sm mt-1">
-                      {FLAG_MAP[e.country] ?? "🏁"} {e.circuit}, {e.city}
+                      {e.circuit}, {e.city}{COUNTRY_NAMES[e.country] ? ` — ${COUNTRY_NAMES[e.country]}` : ""}
                     </p>
                   </div>
                   <div className="text-right">

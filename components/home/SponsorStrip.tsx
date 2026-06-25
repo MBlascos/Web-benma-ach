@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 type Sponsor = { id: string; name: string; tier: string; url?: string; active: boolean };
 
-export default function SponsorStrip({ sponsors }: { sponsors: Sponsor[] }) {
+export default function SponsorStrip({ sponsors, locale }: { sponsors: Sponsor[]; locale: string }) {
   const t = useTranslations("home");
 
   return (
@@ -41,10 +41,13 @@ export default function SponsorStrip({ sponsors }: { sponsors: Sponsor[] }) {
         </div>
 
         <Link
-          href="/en/partners"
+          href={`/${locale}/partners`}
           className="inline-flex items-center gap-2 border border-[#E10600]/50 hover:border-[#E10600] text-[#E10600] font-semibold text-sm tracking-widest uppercase px-8 py-3 rounded transition-all duration-200 hover:bg-[#E10600]/5"
         >
-          {t("become_partner")} →
+          {t("become_partner")}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
         </Link>
       </div>
     </section>

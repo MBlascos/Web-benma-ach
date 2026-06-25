@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-const FLAG_MAP: Record<string, string> = {
-  IT: "🇮🇹", ES: "🇪🇸", BE: "🇧🇪", SE: "🇸🇪", EU: "🇪🇺", GB: "🇬🇧", FR: "🇫🇷", PT: "🇵🇹", DK: "🇩🇰",
+const COUNTRY_NAMES: Record<string, string> = {
+  IT: "Italy", ES: "Spain", BE: "Belgium", SE: "Sweden", EU: "Europe",
+  GB: "GB", FR: "France", PT: "Portugal", DK: "Denmark",
 };
 
 const POS_COLORS: Record<number, string> = {
@@ -106,6 +107,17 @@ export default function ResultsClient({ results }: { results: Result[] }) {
         </div>
       </div>
 
+      {/* Empty state */}
+      {filtered.length === 0 && (
+        <div className="py-20 flex flex-col items-center gap-3 text-center">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[#8A9099]">
+            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+            <rect x="9" y="3" width="6" height="4" rx="1" />
+          </svg>
+          <p className="text-[#8A9099] text-sm">No results match the selected filters.</p>
+        </div>
+      )}
+
       {/* Season groups */}
       <div className="space-y-4">
         {years.map((year) => {
@@ -163,7 +175,7 @@ export default function ResultsClient({ results }: { results: Result[] }) {
                       </div>
                       <div className="col-span-3 hidden md:block">
                         <span className="text-[#8A9099] text-sm">
-                          {FLAG_MAP[r.country] ?? ""} {r.circuit}
+                          {r.circuit}{COUNTRY_NAMES[r.country] ? `, ${COUNTRY_NAMES[r.country]}` : ""}
                         </span>
                       </div>
                       <div className="col-span-2 hidden sm:block">

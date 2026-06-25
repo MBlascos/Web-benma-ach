@@ -5,7 +5,7 @@ export default function ContactPage() {
   const t = useTranslations("contact");
 
   return (
-    <div className="pt-24 pb-20 min-h-screen">
+    <div className="pt-24 pb-20 min-h-[100dvh]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <p className="text-[#E10600] font-display font-bold text-xs tracking-[0.2em] uppercase mb-2">

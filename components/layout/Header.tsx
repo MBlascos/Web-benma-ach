@@ -56,13 +56,14 @@ export default function Header({ locale }: { locale: string }) {
                 <Link
                   key={key}
                   href={navLink(href)}
-                  className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors rounded-md whitespace-nowrap ${
-                    active
-                      ? "text-white"
-                      : "text-white/80 hover:text-white"
+                  className={`relative px-3 py-2 text-sm font-medium tracking-wide transition-colors rounded-md whitespace-nowrap ${
+                    active ? "text-white" : "text-white/60 hover:text-white"
                   }`}
                 >
                   {t(key as "about")}
+                  {active && (
+                    <span className="absolute bottom-0.5 left-3 right-3 h-px bg-[#E10600]" />
+                  )}
                 </Link>
               );
             })}
@@ -97,28 +98,38 @@ export default function Header({ locale }: { locale: string }) {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
-              <span className={`block w-5 h-0.5 bg-current transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-current transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-current transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-current transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="lg:hidden bg-[#16181D] border-t border-white/5">
+      {/* Mobile menu — animated with max-h transition */}
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-[#16181D] border-t border-white/5">
           <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
-            {NAV_LINKS.map(({ key, href }) => (
-              <Link
-                key={key}
-                href={navLink(href)}
-                className="text-[#8A9099] hover:text-white py-2 text-sm font-medium tracking-wide transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                {t(key as "about")}
-              </Link>
-            ))}
+            {NAV_LINKS.map(({ key, href }) => {
+              const active = pathname.startsWith(navLink(href));
+              return (
+                <Link
+                  key={key}
+                  href={navLink(href)}
+                  className={`py-2 text-sm font-medium tracking-wide transition-colors flex items-center gap-2 ${
+                    active ? "text-white" : "text-[#8A9099] hover:text-white"
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {active && <span className="w-1 h-1 rounded-full bg-[#E10600] flex-shrink-0" />}
+                  {t(key as "about")}
+                </Link>
+              );
+            })}
             <div className="pt-4 mt-2 border-t border-white/5">
               <Link
                 href={navLink("/partners")}
@@ -130,7 +141,7 @@ export default function Header({ locale }: { locale: string }) {
             </div>
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }

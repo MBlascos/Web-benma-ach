@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
-const FLAG_EMOJIS: Record<string, string> = {
-  IT: "🇮🇹", ES: "🇪🇸", BE: "🇧🇪", SE: "🇸🇪", EU: "🇪🇺", GB: "🇬🇧", FR: "🇫🇷", PT: "🇵🇹", DK: "🇩🇰",
+const COUNTRY_NAMES: Record<string, string> = {
+  IT: "Italy", ES: "Spain", BE: "Belgium", SE: "Sweden", EU: "Europe",
+  GB: "Great Britain", FR: "France", PT: "Portugal", DK: "Denmark",
 };
 
 type CalendarEvent = {
@@ -44,7 +46,7 @@ function useCountdown(targetDate: string) {
 export default function NextRace({ event }: { event: CalendarEvent }) {
   const t = useTranslations("home");
   const countdown = useCountdown(event.startDate);
-  const flag = FLAG_EMOJIS[event.country] ?? "🏁";
+  const countryName = COUNTRY_NAMES[event.country] ?? event.country;
 
   const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -52,7 +54,12 @@ export default function NextRace({ event }: { event: CalendarEvent }) {
     <section className="py-20 bg-[#16181D] border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <p className="text-[#E10600] font-display font-bold text-xs tracking-[0.2em] uppercase mb-2">
               {t("next_race")}
             </p>
@@ -61,7 +68,7 @@ export default function NextRace({ event }: { event: CalendarEvent }) {
               {event.title}
             </h2>
             <p className="text-[#8A9099] text-sm mb-1">
-              {flag} {event.circuit}, {event.city}
+              {event.circuit}, {event.city}, {countryName}
             </p>
             <p className="text-[#8A9099] text-sm mb-6">
               {event.championship} · {event.round}
@@ -79,10 +86,16 @@ export default function NextRace({ event }: { event: CalendarEvent }) {
                 year: "numeric",
               })}
             </p>
-          </div>
+          </motion.div>
 
           {/* Countdown */}
-          <div className="grid grid-cols-4 gap-3 sm:gap-4">
+          <motion.div
+            className="grid grid-cols-4 gap-3 sm:gap-4"
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             {[
               { val: countdown.days, label: t("countdown_days") },
               { val: countdown.hours, label: t("countdown_hours") },
@@ -99,7 +112,7 @@ export default function NextRace({ event }: { event: CalendarEvent }) {
                 <span className="text-[#8A9099] text-xs tracking-widest uppercase">{label}</span>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
