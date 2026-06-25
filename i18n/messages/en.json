@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "results": "Results",
+    "calendar": "Calendar",
+    "news": "News",
+    "gallery": "Gallery",
+    "partners": "Partners",
+    "contact": "Contact",
+    "partner_cta": "Partner With Benjamin"
+  },
+  "home": {
+    "tagline": "15-year-old OK World Championship contender. Next stop: Formula 1.",
+    "cta_primary": "Partner With Benjamin",
+    "cta_secondary": "See the Record",
+    "stats_heading": "By the numbers",
+    "latest_result": "Latest Result",
+    "achievements": "Achievements",
+    "next_race": "Next Race",
+    "partners": "Partners",
+    "countdown_days": "Days",
+    "countdown_hours": "hrs",
+    "countdown_mins": "min",
+    "countdown_secs": "sec",
+    "become_partner": "Become a Partner",
+    "read_report": "Read Report",
+    "view_all": "View All Results",
+    "view_all_news": "View All News",
+    "follow_instagram": "Follow on Instagram"
+  },
+  "about": {
+    "title": "About Benjamin",
+    "subtitle": "From motocross at 4 to Formula 1 aspirant at 15",
+    "bio_title": "My Story",
+    "journey_title": "The Journey",
+    "team_title": "The Team",
+    "machinery_title": "The Machinery",
+    "goal_title": "The Goal"
+  },
+  "results": {
+    "title": "Race Results",
+    "subtitle": "A full record of every race, every podium, every championship",
+    "filter_year": "Year",
+    "filter_championship": "Championship",
+    "filter_type": "Result Type",
+    "all": "All",
+    "wins": "Wins",
+    "podiums": "Podiums",
+    "position": "Pos.",
+    "event": "Event",
+    "circuit": "Circuit",
+    "date": "Date",
+    "category": "Category"
+  },
+  "calendar": {
+    "title": "2026 Race Calendar",
+    "subtitle": "Follow Benjamin's journey across Europe",
+    "upcoming": "Upcoming",
+    "completed": "Completed",
+    "live": "Live",
+    "round": "Round"
+  },
+  "news": {
+    "title": "News & Race Reports",
+    "subtitle": "Updates from the track",
+    "read_more": "Read More"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "On track and off — the full season in pictures",
+    "filter_all": "All",
+    "filter_season": "Season"
+  },
+  "partners": {
+    "title": "Race With Benjamin",
+    "subtitle": "Associate your brand with a future Formula 1 World Champion",
+    "value_prop": "Sponsoring a 15-year-old racing prodigy with a clear trajectory to the top is not just advertising — it is a long-term investment in association with ambition, discipline, and achievement.",
+    "tiers_title": "Partnership Tiers",
+    "current_partners": "Current Partners",
+    "media_kit": "Download Media Kit",
+    "contact_cta": "Discuss a Partnership",
+    "reach_title": "Audience & Reach"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Benjamin is managed by his family team. All enquiries are handled professionally.",
+    "name": "Full Name",
+    "org": "Organisation",
+    "email": "Email Address",
+    "subject": "Subject",
+    "subject_sponsorship": "Sponsorship",
+    "subject_media": "Media",
+    "subject_other": "Other",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Thank you — we will be in touch shortly.",
+    "error": "Something went wrong. Please try again.",
+    "managed_by": "Benjamin is represented by his management team. Please direct all enquiries through this form."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "legal": "Legal"
+  }
+}

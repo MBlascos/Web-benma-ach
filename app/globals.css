@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-carbon: #0B0B0D;
+  --color-ink: #16181D;
+  --color-paper: #F5F6F8;
+  --color-accent: #E10600;
+  --color-gold: #D4AF37;
+  --color-steel: #8A9099;
+
+  --font-display: "Saira Condensed", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0B0B0D;
+  color: #F5F6F8;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #E10600;
+  color: #F5F6F8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

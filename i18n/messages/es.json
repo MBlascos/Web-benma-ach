@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "results": "Resultados",
+    "calendar": "Calendario",
+    "news": "Noticias",
+    "gallery": "Galería",
+    "partners": "Partners",
+    "contact": "Contacto",
+    "partner_cta": "Sé Partner de Benjamin"
+  },
+  "home": {
+    "tagline": "Piloto de 15 años aspirante al Campeonato del Mundo OK. Próximo destino: Fórmula 1.",
+    "cta_primary": "Sé Partner de Benjamin",
+    "cta_secondary": "Ver el Palmarés",
+    "stats_heading": "En cifras",
+    "latest_result": "Último Resultado",
+    "achievements": "Logros",
+    "next_race": "Próxima Carrera",
+    "partners": "Partners",
+    "countdown_days": "Días",
+    "countdown_hours": "h",
+    "countdown_mins": "min",
+    "countdown_secs": "seg",
+    "become_partner": "Conviértete en Partner",
+    "read_report": "Leer el Informe",
+    "view_all": "Ver Todos los Resultados",
+    "view_all_news": "Ver Todas las Noticias",
+    "follow_instagram": "Seguir en Instagram"
+  },
+  "about": {
+    "title": "Sobre Benjamin",
+    "subtitle": "Del motocross con 4 años a aspirante a la Fórmula 1 con 15",
+    "bio_title": "Mi Historia",
+    "journey_title": "El Recorrido",
+    "team_title": "El Equipo",
+    "machinery_title": "El Material",
+    "goal_title": "El Objetivo"
+  },
+  "results": {
+    "title": "Resultados",
+    "subtitle": "Un registro completo de cada carrera, cada podio y cada campeonato",
+    "filter_year": "Año",
+    "filter_championship": "Campeonato",
+    "filter_type": "Tipo de resultado",
+    "all": "Todos",
+    "wins": "Victorias",
+    "podiums": "Podios",
+    "position": "Pos.",
+    "event": "Evento",
+    "circuit": "Circuito",
+    "date": "Fecha",
+    "category": "Categoría"
+  },
+  "calendar": {
+    "title": "Calendario 2026",
+    "subtitle": "Sigue la trayectoria de Benjamin por Europa",
+    "upcoming": "Próxima",
+    "completed": "Completada",
+    "live": "En Directo",
+    "round": "Ronda"
+  },
+  "news": {
+    "title": "Noticias e Informes de Carrera",
+    "subtitle": "Novedades desde el circuito",
+    "read_more": "Leer más"
+  },
+  "gallery": {
+    "title": "Galería",
+    "subtitle": "En pista y fuera de ella — la temporada completa en imágenes",
+    "filter_all": "Todas",
+    "filter_season": "Temporada"
+  },
+  "partners": {
+    "title": "Corre con Benjamin",
+    "subtitle": "Asocia tu marca con un futuro Campeón del Mundo de Fórmula 1",
+    "value_prop": "Patrocinar a un joven piloto de 15 años con una trayectoria clara hacia la cima no es solo publicidad — es una inversión a largo plazo en ambición, disciplina y resultados.",
+    "tiers_title": "Niveles de Patrocinio",
+    "current_partners": "Partners Actuales",
+    "media_kit": "Descargar el Dossier de Prensa",
+    "contact_cta": "Hablemos de un Patrocinio",
+    "reach_title": "Audiencia y Alcance"
+  },
+  "contact": {
+    "title": "Contacta con Nosotros",
+    "subtitle": "Benjamin está representado por su equipo familiar. Todas las consultas se atienden de forma profesional.",
+    "name": "Nombre Completo",
+    "org": "Organización",
+    "email": "Correo Electrónico",
+    "subject": "Asunto",
+    "subject_sponsorship": "Patrocinio",
+    "subject_media": "Medios de Comunicación",
+    "subject_other": "Otro",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "Gracias, nos pondremos en contacto contigo en breve.",
+    "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+    "managed_by": "Benjamin está representado por su equipo de gestión. Por favor, dirija todas las consultas a través de este formulario."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "legal": "Legal"
+  }
+}
