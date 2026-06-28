@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { PARTNER_TIERS, SPONSORS } from "@/lib/data";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ function CheckIcon() {
 
 export default async function PartnersPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = useTranslations("partners");
+  const t = await getTranslations("partners");
 
   return (
     <div className="pt-24 pb-20 min-h-[100dvh]">
