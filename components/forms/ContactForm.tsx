@@ -56,16 +56,10 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <input ref={honeypot} name="_hp" type="text" className="hidden" tabIndex={-1} aria-hidden="true" />
 
-      <div className="grid sm:grid-cols-2 gap-5">
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[#8A9099] text-xs tracking-wide">{t("name")} *</label>
-          <input name="name" type="text" placeholder="Marco Rossi" className={inputClass(!!fieldErrors.name)} />
-          {fieldErrors.name && <p className="text-[#E10600] text-xs">{fieldErrors.name}</p>}
-        </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-[#8A9099] text-xs tracking-wide">{t("org")}</label>
-          <input name="org" type="text" placeholder="Red Bull Racing Ltd" className={inputClass(false)} />
-        </div>
+      <div className="flex flex-col gap-1.5">
+        <label className="text-[#8A9099] text-xs tracking-wide">{t("name")} *</label>
+        <input name="name" type="text" placeholder="Marco Rossi" className={inputClass(!!fieldErrors.name)} />
+        {fieldErrors.name && <p className="text-[#E10600] text-xs">{fieldErrors.name}</p>}
       </div>
 
       <div className="flex flex-col gap-1.5">

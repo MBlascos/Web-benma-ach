@@ -75,10 +75,10 @@ export default function AboutPage() {
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { role: "Family Team", name: "Mañach Family", desc: "Mum and Dad are at every race. They handle logistics, data, and motivation — a fully professional support structure built around me." },
+                  { role: "Family Team", name: "Mañach Family", desc: "Dad is at every race — a fully professional support structure built around Benjamin." },
                   { role: "Race Team", name: "Ward Racing", desc: "One of the most respected OK outfits in European karting. Professional engineering support, data analysis, and setup expertise." },
                   { role: "Chassis", name: "Parolin", desc: "Parolin chassis — precision-engineered for the highest levels of karting competition." },
-                  { role: "Engine / Tyres", name: "TM Kart / LeCont", desc: "TM Kart engine paired with LeCont control tyres — the same package across the top-level OK field." },
+                  { role: "Engine / Tyres", name: "TM Kart / Maxxis", desc: "TM Kart engine paired with Maxxis control tyres — the same package across the top-level OK field." },
                 ].map((item) => (
                   <div key={item.role} className="bg-[#16181D] border border-white/5 rounded-lg p-5">
                     <p className="text-[#E10600] font-display font-bold text-xs tracking-widest uppercase mb-1">{item.role}</p>
@@ -98,7 +98,7 @@ export default function AboutPage() {
                 {[
                   { label: "Chassis", value: "Parolin", note: "Italian-built, top OK specification" },
                   { label: "Engine", value: "TM Kart", note: "Category-legal direct-drive unit" },
-                  { label: "Tyres", value: "LeCont", note: "Control tyre — equal across the field" },
+                  { label: "Tyres", value: "Maxxis", note: "Control tyre — equal across the field" },
                 ].map(({ label, value, note }) => (
                   <div key={label} className="flex items-baseline gap-6 py-4">
                     <p className="text-[#8A9099] text-xs tracking-widest uppercase w-16 flex-shrink-0">{label}</p>

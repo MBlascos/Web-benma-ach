@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const NEWS_ITEMS = [
   {
-    slug: "wsk-super-master-lonato-win",
-    title: "Benjamin Wins the WSK Super Master Series Final at Lonato",
-    excerpt: "In a stunning performance at Lonato del Garda, Benjamin Mañach took victory in the OK Final — his biggest career win to date.",
-    date: "2026-03-03",
+    slug: "cotf-mulsen-p2",
+    title: "P2 at Champions of the Future — Mülsen",
+    excerpt: "Benjamin takes P2 at the Champions of the Future round at Motorsport Arena Mülsen, Germany — another podium in a strong 2026 season.",
+    date: "2026-06-06",
     category: "Race Report",
-    image: "/images/ben-02.jpg",
+    image: "/images/ben-06.jpg",
   },
   {
     slug: "wsk-p3-overall-championship",
@@ -20,12 +20,28 @@ const NEWS_ITEMS = [
     image: "/images/ben-05.jpg",
   },
   {
+    slug: "wsk-super-master-lonato-win",
+    title: "Benjamin Wins the WSK Super Master Series Final at Lonato",
+    excerpt: "In a stunning performance at Lonato del Garda, Benjamin Mañach took victory in the OK Final — his biggest career win to date.",
+    date: "2026-03-03",
+    category: "Race Report",
+    image: "/images/ben-02.jpg",
+  },
+  {
+    slug: "all-road-management-signing",
+    title: "Benjamin Signs with All Road Management",
+    excerpt: "At the start of the 2026 season, Benjamin Mañach confirms a management partnership with All Road Management — adding professional off-track structure to his campaign.",
+    date: "2026-01-10",
+    category: "Team News",
+    image: "/images/ben-27.jpg",
+  },
+  {
     slug: "ward-racing-2026",
     title: "Benjamin Joins Ward Racing for the 2026 OK Campaign",
-    excerpt: "The Mañach family announces a partnership with Ward Racing for the 2026 season — Benjamin's first year competing in the top OK category on Parolin / TM Kart / LeCont.",
+    excerpt: "The Mañach family announces a partnership with Ward Racing for the 2026 season — Benjamin's first year competing in the top OK category on Parolin / TM Kart / Maxxis.",
     date: "2026-01-15",
     category: "Team News",
-    image: "/images/ben-08.jpg",
+    image: "/images/ben-16.jpg",
   },
   {
     slug: "fia-worlds-2025-sweden",

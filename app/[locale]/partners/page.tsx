@@ -1,14 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { PARTNER_TIERS, SPONSORS } from "@/lib/data";
+import { SPONSORS } from "@/lib/data";
 import Link from "next/link";
-
-function CheckIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#E10600] flex-shrink-0 mt-0.5">
-      <path d="m5 12 5 5L20 7" />
-    </svg>
-  );
-}
 
 export default async function PartnersPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -76,43 +68,6 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
           </div>
         </section>
 
-        {/* Tiers — 2-col + 2-col stacked instead of 4-equal */}
-        <section>
-          <h2 className="font-display font-bold uppercase text-white text-2xl tracking-wide mb-8">
-            {t("tiers_title")}
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {PARTNER_TIERS.map((tier, i) => (
-              <div
-                key={tier.id}
-                className={`rounded-xl p-6 border ${
-                  i === 0
-                    ? "border-[#D4AF37]/40 bg-[#D4AF37]/5"
-                    : i === 1
-                    ? "border-[#E10600]/30 bg-[#E10600]/5"
-                    : "border-white/5 bg-[#16181D]"
-                }`}
-              >
-                {i === 0 && (
-                  <span className="inline-block bg-[#D4AF37] text-black text-xs font-bold px-2 py-0.5 rounded mb-3 tracking-wide uppercase">
-                    Premium
-                  </span>
-                )}
-                <h3 className="font-display font-black text-white text-xl uppercase mb-2">{tier.name}</h3>
-                <p className="text-[#8A9099] text-sm mb-4 leading-relaxed">{tier.blurb}</p>
-                <ul className="space-y-1.5">
-                  {tier.benefits.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-[#8A9099] text-xs">
-                      <CheckIcon />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Current partners */}
         <section>
           <h2 className="font-display font-bold uppercase text-white text-2xl tracking-wide mb-6">
@@ -139,33 +94,22 @@ export default async function PartnersPage({ params }: { params: Promise<{ local
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Partnership CTA */}
         <section className="bg-[#16181D] border border-[#E10600]/20 rounded-xl p-8 sm:p-12">
           <div className="max-w-xl">
             <h2 className="font-display font-black uppercase text-white leading-none mb-4"
                 style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}>
-              Ready to discuss a partnership?
+              Want to partner with me?
             </h2>
             <p className="text-[#8A9099] mb-8">
-              Contact us to receive a full media kit, discuss placement options, and talk through what a partnership with Benjamin looks like for your brand.
+              If you&apos;re interested in partnering with Benjamin, get in touch. We&apos;ll discuss what works best for both sides.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-flex items-center justify-center gap-2 bg-[#E10600] hover:bg-[#c00500] text-white font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded transition-colors"
-              >
-                {t("contact_cta")}
-              </Link>
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded transition-colors"
-              >
-                Request media kit
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
+            <Link
+              href={`/${locale}/contact`}
+              className="inline-flex items-center justify-center gap-2 bg-[#E10600] hover:bg-[#c00500] text-white font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded transition-colors"
+            >
+              {t("contact_cta")}
+            </Link>
           </div>
         </section>
       </div>
