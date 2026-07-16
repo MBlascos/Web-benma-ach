@@ -14,12 +14,12 @@ type Achievement = {
 };
 
 const IMAGES = [
-  "/images/ben-25.jpg", // WSK Lonato win — P1 trophy
-  "/images/ben-24.jpg", // WSK P3 overall — podium/Spain flag
-  "/images/ben-10.jpg", // IAME Winter Cup 2024
-  "/images/ben-13.jpg", // FIA Worlds 2025 (update to Forza Racing photo when available)
-  "/images/ben-07.jpg", // IAME Euro R1 Zuera 2024
-  "/images/ben-09.jpg", // IAME International Finals pole
+  "/images/ben-25.jpg",
+  "/images/ben-24.jpg",
+  "/images/iame-winter-cup-2024.jpeg",
+  "/images/fia-worlds-2025-forza.jpeg",
+  "/images/iame-euro-r1-zuera-2024.jpeg",
+  "/images/ben-09.jpg",
 ];
 
 export default function AchievementsTeaser({
