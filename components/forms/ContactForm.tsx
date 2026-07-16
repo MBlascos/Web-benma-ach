@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 type FieldErrors = Partial<Record<"name" | "email" | "subject" | "message", string>>;
@@ -10,6 +10,11 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const honeypot = useRef<HTMLInputElement>(null);
+  const timestamp = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (timestamp.current) timestamp.current.value = Date.now().toString();
+  }, []);
 
   function validate(data: Record<string, FormDataEntryValue>): FieldErrors {
     const errors: FieldErrors = {};
@@ -55,6 +60,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <input ref={honeypot} name="_hp" type="text" className="hidden" tabIndex={-1} aria-hidden="true" />
+      <input ref={timestamp} name="_ts" type="hidden" />
 
       <div className="flex flex-col gap-1.5">
         <label className="text-[#8A9099] text-xs tracking-wide">{t("name")} *</label>

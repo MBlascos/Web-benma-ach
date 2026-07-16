@@ -7,21 +7,26 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [75, 85, 90],
-    remotePatterns: [
+    remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
+  },
+  async headers() {
+    return [
       {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
+        source: "/(.*)",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-XSS-Protection", value: "1; mode=block" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
       },
-    ],
+    ];
   },
 };
 
