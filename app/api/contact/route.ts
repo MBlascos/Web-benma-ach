@@ -72,7 +72,7 @@ export async function POST(req: Request) {
         .filter(Boolean);
 
       await resend.emails.send({
-        from: "contact@benjaminmanach.com",
+        from: "contact@benmanach.com",
         to,
         subject: `[Benjamin Mañach] ${subject} — ${name}`,
         text: `From: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`,
