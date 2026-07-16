@@ -69,8 +69,8 @@ export default function Hero({ locale }: { locale: string }) {
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-8">
           {[
             { num: "P1", label: "WSK Super Master Series Final — Lonato 2026" },
-            { num: "P3", label: "WSK Super Master Series Overall — 2026" },
-            { num: "P12", label: "FIA Karting World Championship — Sweden 2025" },
+            { num: "P1", label: "IAME Winter Cup — 2024" },
+            { num: "P1", label: "IAME Euro Series Round 1 — Zuera 2024" },
             { num: "15", label: "Years old — racing at the top of European karting" },
           ].map(({ num, label }) => (
             <div key={label} className="flex flex-col gap-0.5">
