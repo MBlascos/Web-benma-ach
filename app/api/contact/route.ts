@@ -66,9 +66,14 @@ export async function POST(req: Request) {
     try {
       const { Resend } = await import("resend");
       const resend = new Resend(resendKey);
+      const to = (process.env.CONTACT_EMAIL ?? "miquelblascos@gmail.com")
+        .split(",")
+        .map((e) => e.trim())
+        .filter(Boolean);
+
       await resend.emails.send({
         from: "contact@benjaminmanach.com",
-        to: process.env.CONTACT_EMAIL ?? "miquelblascos@gmail.com",
+        to,
         subject: `[Benjamin Mañach] ${subject} — ${name}`,
         text: `From: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`,
       });
